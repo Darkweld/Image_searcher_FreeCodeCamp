@@ -61,7 +61,8 @@ app.get("/recent", function (req, res) {
     });
 });
 app.get("/", function(req, res) {
-    res.send("<p>To make a search, https://tranquil-everglades-57725.herokuapp.com/search/<term>." +
-    "<br>To add an offset to the search, https://tranquil-everglades-57725.herokuapp.com/search/<term>?offset=<number>" +
-    "<br>To see recent searches, https://tranquil-everglades-57725.herokuapp.com/recent</p>");
+    res.send("<p>To make a search, https://tranquil-everglades-57725.herokuapp.com/search/YOUR_TERM_HERE." +
+    "<br>To add an offset to the search, https://tranquil-everglades-57725.herokuapp.com/search/YOUR_TERM_HERE?offset=YOUR_NUMBER_HERE" +
+    "<br>To see recent searches, https://tranquil-everglades-57725.herokuapp.com/recent" +
+    "<br> <span style = 'color: red;'>Courtesy of <a href='https://unsplash.com/developers'>Unsplash API</a></span></p>");
 });
