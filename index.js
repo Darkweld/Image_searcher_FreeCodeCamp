@@ -57,10 +57,11 @@ app.get("/recent", function (req, res) {
     var searches = db.collection("searches");
     searches.find({}, {_id: 0}).toArray(function(err, data) {
         if (err) throw err;
-        res.json(data);
+        res.json(data.reverse());
     });
 });
 app.get("/", function(req, res) {
-    res.send("To make a search, add /search/<term> to this app <br> To see recent "
-    + "searches, go to /recent");
+    res.send("<p>To make a search, https://tranquil-everglades-57725.herokuapp.com/search/<term>." +
+    "<br>To add an offset to the search, https://tranquil-everglades-57725.herokuapp.com/search/<term>?offset=<number>" +
+    "<br>To see recent searches, https://tranquil-everglades-57725.herokuapp.com/recent</p>");
 });
