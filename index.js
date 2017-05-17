@@ -4,14 +4,14 @@ var express = require('express');
 var app = express();
 var https = require("https");
 
-var url = "mongodb://localhost:27017/searches";
+var url = process.env.MONGODB_URI;
 
 var db;
 
 MongoClient.connect(url, function (err, database) {
     if (err) throw err;
     db = database;
-    db.createCollection("searches", {capped:true, size: 1000000, max: 10});
+    db.createCollection("searches", {capped:true, size: 100000, max: 10});
     app.listen(process.env.PORT||8080, function(){
         console.log("listening");
     });
